@@ -10,6 +10,10 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 const auth = require('./controllers/authorization');
 
+process.on('uncaughtException', function (err) {
+    console.log(err);
+}); 
+
 //Database Setup - add your own information here based on the DB you created
 const db = knex({
   client: 'pg',
