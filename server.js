@@ -18,10 +18,8 @@ process.on('uncaughtException', function (err) {
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-spherical-52135',
-    user : 'aneagoie',
-    password : '',
-    database : 'smart-brain'
+    host : process.env.DATABASE_URL,
+    ssl: true,
   }
 });
 
